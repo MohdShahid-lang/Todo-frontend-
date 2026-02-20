@@ -4,7 +4,9 @@ import ProtectedRoutes from './components/ProtectedRoutes'
 function page() {
   return (
     <ProtectedRoutes>
-    <div>page</div>
+    <>
+    <div className='bg-'></div>
+    </>
     </ProtectedRoutes>
   )
 }
