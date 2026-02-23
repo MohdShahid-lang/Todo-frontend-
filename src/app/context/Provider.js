@@ -9,6 +9,8 @@ export const UserProvider = ({ children }) => {
     const [token, setToken] = useState(null);
     const [loading, setLoading] = useState(false);
 
+    // Todo related states
+    const [todos, setTodos] = useState([]);
     useEffect(()=>{
         const storedToken = localStorage.getItem("token");
 
@@ -21,4 +23,4 @@ export const UserProvider = ({ children }) => {
     );
 };
 
-export const useUser = () => useContext(userContext);
+export const useUser = () => useContext(userContext)

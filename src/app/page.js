@@ -1,12 +1,12 @@
-import React from 'react'
-import ProtectedRoutes from './components/ProtectedRoutes'
+import React from 'react';
+import ProtectedRoutes from './components/ProtectedRoutes';
+import Todo from './components/Todo';
+
 
 function page() {
   return (
     <ProtectedRoutes>
-    <>
-    <div className='bg-'></div>
-    </>
+    <Todo />
     </ProtectedRoutes>
   )
 }
