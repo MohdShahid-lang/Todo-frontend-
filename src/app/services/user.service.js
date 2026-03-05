@@ -1,13 +1,13 @@
 // Register
 
-import { axiosIntance } from "@/api/axios";
+import { axiosInstance } from "@/api/axios";
 import toast from "react-hot-toast";
 
 export const userRegister = async (data, setLoading, router, reset) => {
     console.log(data)
     setLoading(true); // Loading transaction started
     try {
-        const res = await axiosIntance.post("/user/register", data );
+        const res = await axiosInstance.post("/user/register", data );
         toast.success(res.data?.message);
         router.push("/login");
         reset();
@@ -24,7 +24,7 @@ export const userRegister = async (data, setLoading, router, reset) => {
 export const userLogin = async (data, setLoading, router, reset) => {
     setLoading(true); // Loading transaction started
     try {
-        const res = await axiosIntance.post("/user/login", data);
+        const res = await axiosInstance.post("/user/login", data);
         toast.success(res.data?.message);
         console.log(res.data?.user);
        const token = res.data?.user?.token;
@@ -47,5 +47,11 @@ export const userLogin = async (data, setLoading, router, reset) => {
 export const hasToken = () => {
   if (typeof window === "undefined")return false;
    
-  return!!localStorage.getItem("token");
+  return !!localStorage.getItem("token");
+};
+
+export const getToken = () => {
+  if (typeof window === "undefined")return false;
+   
+  return localStorage.getItem("token");
 };

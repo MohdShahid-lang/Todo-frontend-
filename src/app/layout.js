@@ -1,11 +1,11 @@
-import {Sora } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 import { UserProvider } from "./context/Provider";
 import { Toaster } from "react-hot-toast";
 
 const fontSora = Sora({
   variable: "--font-sora",
-  weight: [ "400", "200"],
+  weight: ["400", "200"],
   subsets: ["latin"],
 })
 
@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
         className={`${fontSora.variable} antialiased`}
       >
         <UserProvider>
-          <Toaster position="top-center"/>
+          <Toaster position="top-center" />
           {children}
-          </UserProvider>
+        </UserProvider>
       </body>
     </html>
   );
